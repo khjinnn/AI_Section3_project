@@ -1,0 +1,11 @@
+.dot{
+    margin: 0;
+    text-align: center;
+}
+
+.table, .table th, .table td {
+    margin-left:auto; 
+    margin-right:auto;
+    padding: 0.5px;
+    vertical-align : middle;
+}

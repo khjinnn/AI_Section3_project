@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Iris Classification</title>
+{% endblock %}
+
+{% block body %}
+<div class="dot">
+    <br>
+    <h1>Iris Classification</h1>
+    <br>
+    <br>
+    <table class="table">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Attribute 1</th>
+            <th scope="col">Attribute 2</th>
+            <th scope="col">Attribute 3</th>
+            <th scope="col">Attribute 4</th>
+            <th scope="col">Actions</th>
+            <th scope="col">Predict</th>
+
+        </tr>
+        {% for thing in things %}
+            <tr>
+                <td>{{ thing.name }}</td>
+                <td>{{ thing.att1 }}</td>
+                <td>{{ thing.att2 }}</td>
+                <td>{{ thing.att3 }}</td>
+                <td>{{ thing.att4 }}</td>
+                <td>
+                    <input class="btn btn-default btn-sm" type="button" value="Delete" onClick="location.href='/delete/{{ thing.id }}'">
+                    <br>
+                    <input class="btn btn-default btn-sm" type="button" value="Update" onClick="location.href='/update/{{ thing.id }}'">
+                </td>
+                <td>
+                    <input class="btn btn-success btn-sm" type="button" value="Predict" onClick="location.href='/predict/{{ thing.id }}'">
+
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <form action="/" method="POST">
+        <input type="text" name="name" id="name" placeholder="Enter Name">
+        <input type="text" name="att1" id="att1" placeholder="Enter Attribute 1">
+        <input type="text" name="att2" id="att2" placeholder="Enter Attribute 2">
+        <input type="text" name="att3" id="att3" placeholder="Enter Attribute 3">
+        <input type="text" name="att4" id="att4" placeholder="Enter Attribute 4">
+        <input class="btn btn-primary btn-sm" type="submit" value="Add">
+
+    </form>
+</div>
+{% endblock%}    

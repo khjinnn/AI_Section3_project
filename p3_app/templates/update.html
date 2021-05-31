@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Flower prediction</title>
+{% endblock %}
+
+{% block body %}
+<div class="dot">
+    <br>
+    <h1>Update Attribute</h1>
+    <br>
+    <br>
+    <div>
+        <form action="/update/{{thing.id}}" method="POST">
+            <input type="text" name="name" id="name" value="{{thing.name}}">
+            <input type="text" name="att1" id="att1" value="{{thing.att1}}">
+            <input type="text" name="att2" id="att2" value="{{thing.att2}}">
+            <input type="text" name="att3" id="att3" value="{{thing.att3}}">
+            <input type="text" name="att4" id="att4" value="{{thing.att4}}">
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</div>
+{% endblock%}    

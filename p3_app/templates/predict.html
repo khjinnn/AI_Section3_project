@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Flower prediction</title>
+{% endblock %}
+
+{% block body %}
+<div class = "dot">
+    <br>
+    <br>
+    {% if data == 0 %}
+    <h1>Iris-setosa</h1>
+    <br>
+    <img src = '/static/setosa.jpeg' width="300" height="300">
+
+    {% elif data ==1 %}
+    <h1>Iris-versicolor</h1>
+    <br>
+    <img src = '/static/versi.jpeg' width="300" height="300">
+
+    {% else %}
+    <h1>Iris-virgini</h1>
+    <br>
+    <img src = '/static/virgi.jpeg' width="300" height="300">
+
+    {% endif %}
+    <br><br>
+    <input type="button" value="Back to homepage" onClick="location.href='/'">
+</div>
+{% endblock%}    
